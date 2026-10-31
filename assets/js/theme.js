@@ -412,12 +412,12 @@
     document.addEventListener('submit', (e) => {
       if (!e.target || e.target.tagName !== 'FORM') return;
       e.preventDefault();
-      toast('This is a static demo — forms are not connected to a backend.');
+      toast('这是静态主题演示，表单未连接后端。');
     });
     $$('a[data-demo-link], a[href="#"]').forEach((a) => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        toast('This link only works in a real deployment.');
+        toast('该链接仅在真实部署中生效。');
       });
     });
   }
