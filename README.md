@@ -179,11 +179,13 @@ aster-anime-theme/
 
 ### GitHub Pages
 
-仓库已包含 `.github/workflows/pages.yml`。推送到 `main` 后：
+推送到 `main` 后：
 
 1. 打开仓库 **Settings → Pages**；
-2. Source 选择 **GitHub Actions**；
-3. 等待 `Deploy theme demo to Pages` 工作流完成。
+2. **Build and deployment → Source** 选择 **Deploy from a branch**；
+3. Branch 选择 `main`，目录选择 `/ (root)`，保存。
+
+仓库已包含 `.nojekyll`，静态资源会被原样发布。
 
 站点地址：`https://<username>.github.io/aster-anime-theme/`
 
