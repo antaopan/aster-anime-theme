@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>仪表盘 · Aster</title>
+<meta name="description" content="蓝粉渐变 · 二次元内容主题">
+<meta name="theme-color" content="#8fa8ff">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body class="page-admin" data-demo="true">
+<div class="scroll-progress" aria-hidden="true"><i data-scroll-progress></i></div>
+<div class="bg-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+<a class="skip-link" href="#main">跳到内容</a>
+
+<main id="main"><div class="admin-shell">
+  <aside class="admin-side">
+    <div class="admin-side-brand"><span class="brand-mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <defs><linearGradient id="aster17" x1="6" y1="4" x2="43" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ec8ff"/><stop offset=".48" stop-color="#9fb0ff"/><stop offset="1" stop-color="#ff9ec7"/>
+    </linearGradient></defs>
+    <rect class="logo-tile" x="3" y="3" width="42" height="42" rx="13"/>
+    <rect x="3" y="3" width="42" height="42" rx="13" stroke="url(#aster17)" stroke-width="2"/>
+    <path d="M24 8v32M9.2 16l29.6 16M9.2 32l29.6-16" stroke="url(#aster17)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="24" cy="24" r="3.1" fill="none" stroke="url(#aster17)" stroke-width="1.8"/>
+    <circle cx="37.5" cy="10.8" r="1.7" fill="url(#aster17)" opacity=".8"/>
+    <circle cx="10.6" cy="12.4" r="1.1" fill="url(#aster17)" opacity=".45"/>
+  </svg></span><div><b>Aster Admin</b><small>THEME DEMO</small></div></div>
+    <nav class="admin-nav">
+      <a class="admin-nav-link is-active" href="admin.html"><span>仪表盘</span><small>dashboard</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>入驻申请 <i class="nav-badge">3</i></span><small>applications</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>文章与草稿</span><small>posts</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>评论管理</span><small>comments</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>资源文件</span><small>files</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>用户管理</span><small>users</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>站点设置</span><small>settings</small></a>
+      <a class="admin-nav-link" href="admin.html"><span>操作日志</span><small>audit</small></a>
+    </nav>
+    <div class="admin-side-foot"><a href="index.html"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg>返回站点</a><a href="login.html"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>退出登录</a></div>
+  </aside>
+  <section class="admin-content">
+    <header class="admin-topbar"><div><h1>仪表盘</h1><p>Aster Theme · 管理员 Admin</p></div><div class="admin-top-actions"><a class="btn btn-ghost btn-sm" href="index.html" target="_blank" rel="noopener"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="m20 4-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>访问站点</a></div></header>
+    <div class="admin-body">
+      <a class="pending-banner" href="admin.html"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><b>有 3 条入驻申请等待处理</b><small>点击查看申请资料、备注与邮件回复方案</small></span><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      <div class="stat-grid">
+        <div class="stat-card"><span class="stat-icon tone-pink"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>3</b><span>待审申请</span><small>管理员处理</small></div></div>
+        <div class="stat-card"><span class="stat-icon tone-pink"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><div><b>128</b><span>注册居民</span><small>今日新增 4</small></div></div>
+        <div class="stat-card"><span class="stat-icon tone-purple"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5V21.5"/><path d="M8 7h8M8 11h6"/></svg></span><div><b>12</b><span>文章</span><small>草稿 2</small></div></div>
+        <div class="stat-card"><span class="stat-icon tone-cyan"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></span><div><b>6</b><span>讨论</span><small>今日 1</small></div></div>
+        <div class="stat-card"><span class="stat-icon tone-gold"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></span><div><b>48</b><span>评论</span><small>今日 6</small></div></div>
+        <div class="stat-card"><span class="stat-icon tone-green"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><div><b>3</b><span>资源文件</span><small>累计下载 288</small></div></div>
+        <div class="stat-card"><span class="stat-icon tone-blue"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>24.6 MB</b><span>存储占用</span><small>数据库 1.2 MB</small></div></div>
+      </div>
+      <div class="admin-grid-2">
+        <section class="card"><div class="card-head"><h2><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5V21.5"/><path d="M8 7h8M8 11h6"/></svg>最近内容</h2><a href="admin.html">管理全部 ›</a></div><ul class="admin-list">
+          <li><span class="badge badge-article">文章</span><div><a href="post.html">蓝粉渐变不是越多越好</a><small>Aster · 2026/11/01 · 128 浏览</small></div></li>
+          <li><span class="badge badge-discussion">讨论</span><div><a href="discussion.html">大家最近在听什么歌？</a><small>Aoi · 2026/10/31 · 76 浏览</small></div></li>
+          <li><span class="badge badge-article">文章</span><div><a href="post.html">给个人站点加一点动画</a><small>Aster · 2026/10/29 · 96 浏览</small></div></li>
+        </ul></section>
+        <section class="card"><div class="card-head"><h2><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>最新评论</h2><a href="admin.html">全部评论 ›</a></div><ul class="admin-list">
+          <li><div><a href="post.html">这个配色很舒服，已经用在自己的博客上了。</a><small>Aoi · 2 小时前</small></div></li>
+          <li><div><a href="post.html">玻璃层的透明度大概是多少？</a><small>Mori · 1 小时前</small></div></li>
+          <li><div><a href="discussion.html">推荐一张器乐专，适合循环。</a><small>Nana · 3 小时前</small></div></li>
+        </ul></section>
+      </div>
+      <div class="admin-grid-2">
+        <section class="card"><div class="card-head"><h2><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>新加入的居民</h2><a href="admin.html">用户管理 ›</a></div><ul class="admin-list">
+          <li><span class="avatar av-1" style="--av-size:28px" title="Aoi">A</span><div><b>Aoi</b><small>@aoi · 2026/10/31</small></div></li>
+          <li><span class="avatar av-2" style="--av-size:28px" title="Mori">M</span><div><b>Mori</b><small>@mori · 2026/10/30</small></div></li>
+          <li><span class="avatar av-3" style="--av-size:28px" title="Nana">N</span><div><b>Nana</b><small>@nana · 2026/10/29</small></div></li>
+        </ul></section>
+        <section class="card"><div class="card-head"><h2><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>站点状态</h2><a href="admin.html">站点设置 ›</a></div><ul class="kv-list"><li><span>运行时间</span><b>12 天 4 小时</b></li><li><span>主题版本</span><b>1.0.0</b></li><li><span>页面数量</span><b>10</b></li><li><span>许可证</span><b>MIT</b></li><li><span>时区</span><b>Asia/Shanghai</b></li></ul></section>
+      </div>
+    </div>
+  </section>
+</div></main>
+
+<button class="to-top" type="button" data-to-top aria-label="回到顶部"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+<a class="demo-badge" href="index.html">ASTER THEME · DEMO</a>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/petals.js" defer></script>
+</body>
+</html>

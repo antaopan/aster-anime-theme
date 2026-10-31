@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="asterFavicon" x1="8" y1="6" x2="57" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ec8ff"/>
+      <stop offset="0.48" stop-color="#9fb0ff"/>
+      <stop offset="1" stop-color="#ff9ec7"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#f7fbff"/>
+  <rect x="4.5" y="4.5" width="55" height="55" rx="15" fill="none" stroke="url(#asterFavicon)" stroke-width="2.4"/>
+  <path d="M32 10v44M12.3 21.5l39.4 21M12.3 42.5l39.4-21" stroke="url(#asterFavicon)" stroke-width="4.4" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="4.2" fill="#f7fbff" stroke="url(#asterFavicon)" stroke-width="2.2"/>
+  <circle cx="50" cy="14" r="2.2" fill="url(#asterFavicon)" opacity="0.8"/>
+  <circle cx="14" cy="16" r="1.4" fill="url(#asterFavicon)" opacity="0.45"/>
+</svg>

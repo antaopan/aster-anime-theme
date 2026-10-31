@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>首页 · Aster</title>
+<meta name="description" content="蓝粉渐变 · 二次元内容主题">
+<meta name="theme-color" content="#8fa8ff">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body class="page-home" data-demo="true">
+<div class="scroll-progress" aria-hidden="true"><i data-scroll-progress></i></div>
+<div class="bg-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+<a class="skip-link" href="#main">跳到内容</a>
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Aster 首页">
+      <span class="brand-mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <defs><linearGradient id="aster1" x1="6" y1="4" x2="43" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ec8ff"/><stop offset=".48" stop-color="#9fb0ff"/><stop offset="1" stop-color="#ff9ec7"/>
+    </linearGradient></defs>
+    <rect class="logo-tile" x="3" y="3" width="42" height="42" rx="13"/>
+    <rect x="3" y="3" width="42" height="42" rx="13" stroke="url(#aster1)" stroke-width="2"/>
+    <path d="M24 8v32M9.2 16l29.6 16M9.2 32l29.6-16" stroke="url(#aster1)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="24" cy="24" r="3.1" fill="none" stroke="url(#aster1)" stroke-width="1.8"/>
+    <circle cx="37.5" cy="10.8" r="1.7" fill="url(#aster1)" opacity=".8"/>
+    <circle cx="10.6" cy="12.4" r="1.1" fill="url(#aster1)" opacity=".45"/>
+  </svg></span>
+      <span class="brand-text"><b>Aster</b><small>ANIME THEME</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主导航"><a class="nav-link is-active" href="index.html"><span>首页</span><small>ホーム</small></a><a class="nav-link " href="articles.html"><span>文章</span><small>記事</small></a><a class="nav-link " href="discussions.html"><span>讨论区</span><small>掲示板</small></a><a class="nav-link " href="files.html"><span>资源</span><small>リソース</small></a><a class="nav-link " href="about.html"><span>关于</span><small>について</small></a></nav>
+    <div class="header-tools">
+      <form class="search-mini" action="#" data-demo-form method="get" role="search">
+        <svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="搜索文章…" maxlength="40" aria-label="搜索文章">
+      </form>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="切换明暗主题"><svg class="ico i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="ico i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13.2A8.5 8.5 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2z"/></svg></button>
+      <div class="auth-actions"><a class="btn btn-ghost btn-sm" href="login.html">登录</a><a class="btn btn-primary btn-sm" href="apply.html">申请加入</a></div>
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="打开导航"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-nav" data-mobile-nav><a class="nav-link is-active" href="index.html"><span>首页</span><small>ホーム</small></a><a class="nav-link " href="articles.html"><span>文章</span><small>記事</small></a><a class="nav-link " href="discussions.html"><span>讨论区</span><small>掲示板</small></a><a class="nav-link " href="files.html"><span>资源</span><small>リソース</small></a><a class="nav-link " href="about.html"><span>关于</span><small>について</small></a><a class="nav-link" href="login.html"><span>登录</span><small>ログイン</small></a></div>
+</header>
+<main id="main"><section class="hero">
+  <div class="hero-bg" aria-hidden="true"><span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span><span class="hero-grid"></span></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="hero-badge"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg>ASTER THEME · 2026</p>
+      <h1 class="hero-title"><span class="grad-text">把喜欢的东西，<br>放在同一片星光下。</span></h1>
+      <p class="hero-sub">一套蓝粉渐变、轻玻璃拟态的内容站主题。适合个人博客、作品集与小社区。</p>
+      <div class="hero-cta"><a class="btn btn-primary" href="articles.html">开始阅读 <svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><a class="btn btn-glass" href="discussions.html"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>浏览讨论区</a></div>
+      <div class="hero-stats">
+        <div><b data-count="12">12</b><span>篇文章</span></div>
+        <div><b data-count="6">6</b><span>条讨论</span></div>
+        <div><b data-count="48">48</b><span>句留言</span></div>
+        <div><b data-count="128">128</b><span>位居民</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="portrait-card" data-parallax>
+        <span class="portrait-ring" aria-hidden="true"></span>
+        <img class="portrait-img" src="assets/img/hero-art.svg" alt="Aster 主题插画">
+        <div class="portrait-plate"><b>Aster</b><span>ANIME · THEME DEMO</span></div>
+        <span class="float-chip chip-1"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg> 蓝粉渐变</span>
+        <span class="float-chip chip-2"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.2-4.6-9.6-8.7C.5 8.8 2.1 5 6.1 5c2.2 0 3.7 1.2 4.6 2.6L12 9l1.3-1.4C14.2 6.2 15.7 5 17.9 5c4 0 5.6 3.8 3.7 7.3C19.2 16.4 12 21 12 21z"/></svg> 主题演示</span>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wrap home-wrap">
+  <div class="announce" role="status"><span class="announce-dot"></span><p>Aster 1.0 已发布：蓝粉渐变、玻璃拟态与一组轻量动效。</p></div>
+  <section class="home-feature">
+    <a class="feature-card" data-reveal href="post.html">
+      <div class="feature-cover"><span class="post-cover cover-1"><span class="cover-glyph">蓝</span></span></div>
+      <div class="feature-body"><span class="badge badge-article"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg>精选文章</span><h2>蓝粉渐变不是越多越好</h2><p>玻璃拟态、留白与层次：把渐变收在真正需要强调的地方。</p><span class="link-arrow">阅读全文 <svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span></div>
+    </a>
+    <div class="feature-side">
+      <div class="side-card" data-reveal><div class="side-card-head"><h3><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-2.7 7-6.5 0-4.5-4-6-4-9.5-2 1-3 3-3 5-1-1-2-2.5-2-4.5C7 9 5 11 5 15.5 5 19.3 8 22 12 22z"/></svg>正在发生</h3><a href="discussions.html">全部 ›</a></div><div class="thread-list"><a class="thread-row" href="discussion.html">
+    <span class="thread-mark"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></span>
+    <span class="thread-main"><b>大家最近在听什么歌？</b><small>Aoi · 9 小时前</small></span>
+    <span class="thread-count">12 回复</span>
+  </a><a class="thread-row" href="discussion.html">
+    <span class="thread-mark"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></span>
+    <span class="thread-main"><b>求推荐适合写代码的键盘</b><small>Mori · 1 天前</small></span>
+    <span class="thread-count">8 回复</span>
+  </a><a class="thread-row" href="discussion.html">
+    <span class="thread-mark"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></span>
+    <span class="thread-main"><b>移动端导航怎么摆更顺手？</b><small>Nana · 2 天前</small></span>
+    <span class="thread-count">5 回复</span>
+  </a></div></div>
+      <div class="side-card" data-reveal><div class="side-card-head"><h3><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>资源补给</h3><a href="files.html">全部 ›</a></div><div class="file-list-mini"><a class="file-mini" href="files.html">
+    <span class="file-mini-icon"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg></span>
+    <span class="file-mini-main"><b>主题快速开始</b><small>4.2 KB · 2026/11/01</small></span>
+    <svg class="ico file-mini-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+  </a><a class="file-mini" href="files.html">
+    <span class="file-mini-icon"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg></span>
+    <span class="file-mini-main"><b>蓝粉配色 tokens</b><small>1.8 KB · 2026/10/30</small></span>
+    <svg class="ico file-mini-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+  </a></div></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-head"><div><p class="section-jp">最新記事</p><h2>最近写下的东西</h2></div><a class="link-arrow" href="articles.html">查看全部 <svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></div>
+    <div class="post-grid"><article class="post-card" data-reveal>
+  <a class="post-card-cover" href="post.html" aria-hidden="true" tabindex="-1"><span class="post-cover cover-1"><span class="cover-glyph">蓝</span></span></a>
+  <div class="post-card-body">
+    <div class="post-card-meta"><span class="badge badge-article">文章</span><span class="post-date">2026/11/01</span></div>
+    <h3 class="post-card-title"><a href="post.html">蓝粉渐变不是越多越好</a></h3>
+    <p class="post-card-excerpt">玻璃拟态、留白与层次：把渐变收在真正需要强调的地方。</p>
+    <div class="post-card-foot">
+      <span class="meta-item"><span class="avatar av-0" style="--av-size:22px" title="Aster">A</span><b>Aster</b></span>
+      <span class="meta-item"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>128</span>
+      <span class="meta-item"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>6</span>
+    </div>
+  </div>
+</article><article class="post-card" data-reveal>
+  <a class="post-card-cover" href="post.html" aria-hidden="true" tabindex="-1"><span class="post-cover cover-2"><span class="cover-glyph">动</span></span></a>
+  <div class="post-card-body">
+    <div class="post-card-meta"><span class="badge badge-article">文章</span><span class="post-date">2026/10/29</span></div>
+    <h3 class="post-card-title"><a href="post.html">给个人站点加一点动画</a></h3>
+    <p class="post-card-excerpt">滚动进度、卡片倾斜与进入视口的细节，轻量但不敷衍。</p>
+    <div class="post-card-foot">
+      <span class="meta-item"><span class="avatar av-2" style="--av-size:22px" title="Aster">A</span><b>Aster</b></span>
+      <span class="meta-item"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>96</span>
+      <span class="meta-item"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>4</span>
+    </div>
+  </div>
+</article><article class="post-card" data-reveal>
+  <a class="post-card-cover" href="post.html" aria-hidden="true" tabindex="-1"><span class="post-cover cover-3"><span class="cover-glyph">轻</span></span></a>
+  <div class="post-card-body">
+    <div class="post-card-meta"><span class="badge badge-article">文章</span><span class="post-date">2026/10/26</span></div>
+    <h3 class="post-card-title"><a href="post.html">不依赖框架的页面结构</a></h3>
+    <p class="post-card-excerpt">用原生 HTML / CSS / JS 搭一个可维护的内容站。</p>
+    <div class="post-card-foot">
+      <span class="meta-item"><span class="avatar av-1" style="--av-size:22px" title="Aster">A</span><b>Aster</b></span>
+      <span class="meta-item"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>86</span>
+      <span class="meta-item"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 9 9 0 0 1-3.2-.6L4 21l1.4-4.2A8.3 8.3 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>3</span>
+    </div>
+  </div>
+</article></div>
+  </section>
+  <section class="join-band" data-reveal>
+    <div class="join-copy"><p class="section-jp">JOIN THE ISLE</p><h2>想把它变成你的站点？</h2><p>替换文案、图片与配色，就可以开始。主题使用原生 HTML / CSS / JS，没有框架依赖。</p></div>
+    <div class="join-actions"><a class="btn btn-primary" href="about.html">了解主题 <svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a><a class="btn btn-ghost" href="https://github.com/antaopan/aster-anime-theme" target="_blank" rel="noopener">查看源码</a></div>
+  </section>
+</div></main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <defs><linearGradient id="aster2" x1="6" y1="4" x2="43" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ec8ff"/><stop offset=".48" stop-color="#9fb0ff"/><stop offset="1" stop-color="#ff9ec7"/>
+    </linearGradient></defs>
+    <rect class="logo-tile" x="3" y="3" width="42" height="42" rx="13"/>
+    <rect x="3" y="3" width="42" height="42" rx="13" stroke="url(#aster2)" stroke-width="2"/>
+    <path d="M24 8v32M9.2 16l29.6 16M9.2 32l29.6-16" stroke="url(#aster2)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="24" cy="24" r="3.1" fill="none" stroke="url(#aster2)" stroke-width="1.8"/>
+    <circle cx="37.5" cy="10.8" r="1.7" fill="url(#aster2)" opacity=".8"/>
+    <circle cx="10.6" cy="12.4" r="1.1" fill="url(#aster2)" opacity=".45"/>
+  </svg></span>
+      <div><b>Aster</b><p>蓝粉渐变 · 二次元内容主题</p></div>
+    </div>
+    <div class="footer-links"><a href="articles.html">文章</a><a href="discussions.html">讨论区</a><a href="files.html">资源</a><a href="about.html">关于</a></div>
+    <div class="footer-meta">
+      <span>© 2026 Aster Theme</span>
+      <span class="footer-tech">HTML · CSS · JS</span>
+      <a class="footer-mail" href="https://github.com/antaopan/aster-anime-theme" target="_blank" rel="noopener">GitHub · MIT</a>
+    </div>
+  </div>
+</footer>
+<button class="to-top" type="button" data-to-top aria-label="回到顶部"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+<a class="demo-badge" href="index.html">ASTER THEME · DEMO</a>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/petals.js" defer></script>
+</body>
+</html>

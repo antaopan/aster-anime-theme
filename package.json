@@ -1,0 +1,30 @@
+{
+  "name": "aster-anime-theme",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "A light blue-pink anime content theme built with vanilla HTML, CSS and JavaScript.",
+  "license": "MIT",
+  "homepage": "https://antaopan.github.io/aster-anime-theme/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antaopan/aster-anime-theme.git"
+  },
+  "keywords": [
+    "anime",
+    "theme",
+    "blue-pink",
+    "glassmorphism",
+    "static-site",
+    "html",
+    "css",
+    "vanilla-js"
+  ],
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

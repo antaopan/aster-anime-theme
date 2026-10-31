@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>登录 · Aster</title>
+<meta name="description" content="蓝粉渐变 · 二次元内容主题">
+<meta name="theme-color" content="#8fa8ff">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body class="page-auth" data-demo="true">
+<div class="scroll-progress" aria-hidden="true"><i data-scroll-progress></i></div>
+<div class="bg-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<canvas id="petals" aria-hidden="true"></canvas>
+<a class="skip-link" href="#main">跳到内容</a>
+
+<main id="main"><div class="auth-page">
+  <div class="auth-art" aria-hidden="true"><img class="auth-art-bg" src="assets/img/hero-art.svg" alt=""><div class="auth-art-inner"><p class="eyebrow">ASTER · THEME</p><h2>欢迎回来，旅人。</h2><p>登录后可以下载资源、发表评论，并在讨论区留下你的足迹。</p><div class="auth-quote">「愿你在代码与樱花之间，找到自己的节奏。」</div></div></div>
+  <div class="auth-panel"><div class="auth-form-wrap">
+    <a class="brand auth-brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    <defs><linearGradient id="aster15" x1="6" y1="4" x2="43" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6ec8ff"/><stop offset=".48" stop-color="#9fb0ff"/><stop offset="1" stop-color="#ff9ec7"/>
+    </linearGradient></defs>
+    <rect class="logo-tile" x="3" y="3" width="42" height="42" rx="13"/>
+    <rect x="3" y="3" width="42" height="42" rx="13" stroke="url(#aster15)" stroke-width="2"/>
+    <path d="M24 8v32M9.2 16l29.6 16M9.2 32l29.6-16" stroke="url(#aster15)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="24" cy="24" r="3.1" fill="none" stroke="url(#aster15)" stroke-width="1.8"/>
+    <circle cx="37.5" cy="10.8" r="1.7" fill="url(#aster15)" opacity=".8"/>
+    <circle cx="10.6" cy="12.4" r="1.1" fill="url(#aster15)" opacity=".45"/>
+  </svg></span><span class="brand-text"><b>Aster</b><small>ANIME THEME</small></span></a>
+    <h1>登录 Aster</h1><p class="auth-sub">使用你的用户名与密码登录。</p>
+    <form class="auth-form" action="#" data-demo-form method="post">
+      <label class="field"><span>用户名</span><input type="text" name="username" autocomplete="username" placeholder="你的用户名" required></label>
+      <label class="field"><span>密码</span><input type="password" name="password" autocomplete="current-password" placeholder="至少 8 位" required></label>
+      <button class="btn btn-primary btn-block" type="submit">登录</button>
+    </form>
+    <p class="auth-switch">还没有账号？<a href="apply.html">申请加入</a></p>
+    <p class="auth-hint">这是静态主题演示，表单不会提交数据。</p>
+  </div></div>
+</div></main>
+
+<button class="to-top" type="button" data-to-top aria-label="回到顶部"><svg class="ico " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+<a class="demo-badge" href="index.html">ASTER THEME · DEMO</a>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/petals.js" defer></script>
+</body>
+</html>
